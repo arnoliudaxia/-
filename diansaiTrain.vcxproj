@@ -104,6 +104,7 @@
     <None Include="diansaiTrain.ino">
       <FileType>CppCode</FileType>
     </None>
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="digtubePlus.h" />
