@@ -2,13 +2,12 @@
 #include "globalConfig.h"
 #include "digtubePlus.h"
 
+int digtubepins[] = { pin_digtube_a ,pin_digtube_b,pin_digtube_c,pin_digtube_d,pin_digtube_e,pin_digtube_f,pin_digtube_g };
+Digtube digitaltube1(digtubepins);
 void setup()
 {
 	Serial.begin(115200);
-	Serial2.begin(115200);
-	Serial1.begin(115200);
-	Serial3.begin(115200);
-	initTube();
+	
 
 }
 
@@ -16,7 +15,7 @@ void loop()
 {
 	for (int num = 0;num < 10;num++)
 	{
-		digShowNumber(num);
+		digitaltube1.digShowNumber(num);
 		delay(1000);
 	}
 

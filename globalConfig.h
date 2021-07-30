@@ -8,14 +8,14 @@
 #else
 	#include "WProgram.h"
 #endif
-extern int pin_a ;
-extern int pin_b ;
-extern int pin_c ;
-extern int pin_d ;
-extern int pin_e ;
-extern int pin_f  ;
-extern int pin_g ;
-extern int pin_p;
+extern const int pin_digtube_a ;
+extern const int pin_digtube_b ;
+extern const int pin_digtube_c ;
+extern const int pin_digtube_d ;
+extern const int pin_digtube_e ;
+extern const int pin_digtube_f  ;
+extern const int pin_digtube_g ;
+extern const int pin_digtube_p;
 
 #endif
 

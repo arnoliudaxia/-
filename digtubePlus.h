@@ -9,9 +9,19 @@
 	#include "WProgram.h"
 #endif
 
+class Digtube
+{
+public:
+	//Digtube();
+	Digtube(int pins[]);
+	~Digtube();
+	void digShowNumber(int numbertoshow);
+private:
+	int mypins[7];
+};
 
-void initTube();
-void digShowNumber(int numbertoshow);
+
+
 
 #endif
 
