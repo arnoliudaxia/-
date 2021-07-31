@@ -25,14 +25,7 @@ void loop()
 	//digitaltube1.digShowNumber((int)(analogRead(PIN_A10)/(1024.0/10)));
 	//Serial.println(poser1.readPosLevel(10));
 
-	//Serial.println(bt1.isOn());
-	if (bt1.isChanged())
-	{
-		digitalWrite(13, HIGH);
-		delay(1000);
-		digitalWrite(13, LOW);
-
-	}
+	Serial.println(bt1.isOn());
 	delay(200);
 
 }
