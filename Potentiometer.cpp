@@ -19,3 +19,8 @@ int Potentiometer::readPos()
 {
 	return analogRead(mypin);
 }
+
+int Potentiometer::readPosLevel(int levels)
+{
+	return (int)(readPos() / (1024.0 / levels));
+}

@@ -14,6 +14,7 @@ public:
 	Potentiometer(int analogpin);
 	~Potentiometer();
 	int readPos();
+	int readPosLevel(int levels);
 private:
 	int mypin;
 };

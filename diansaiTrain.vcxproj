@@ -107,6 +107,7 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ButtonPlus.h" />
     <ClInclude Include="ConvertAlgorithm.h" />
     <ClInclude Include="digtubePlus.h" />
     <ClInclude Include="globalConfig.h" />
@@ -114,6 +115,7 @@
     <ClInclude Include="__vm\.diansaiTrain.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ButtonPlus.cpp" />
     <ClCompile Include="ConvertAlgorithm.cpp" />
     <ClCompile Include="digtubePlus.cpp" />
     <ClCompile Include="globalConfig.c" />
