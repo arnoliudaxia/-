@@ -16,6 +16,16 @@ extern const int pin_digtube_e ;
 extern const int pin_digtube_f  ;
 extern const int pin_digtube_g ;
 extern const int pin_digtube_p;
+extern const int analogpinA6;
+extern const int analogpinA7;
+extern const int analogpinA8;
+extern const int analogpinA9;
+extern const int analogpinA10;
+extern const int analogpinA11;
+extern const int analogpinA12;
+extern const int analogpinA13;
+extern const int analogpinA14;
+extern const int analogpinA15;
 
 #endif
 

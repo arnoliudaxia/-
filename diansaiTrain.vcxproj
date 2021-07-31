@@ -107,13 +107,17 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConvertAlgorithm.h" />
     <ClInclude Include="digtubePlus.h" />
     <ClInclude Include="globalConfig.h" />
+    <ClInclude Include="Potentiometer.h" />
     <ClInclude Include="__vm\.diansaiTrain.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConvertAlgorithm.cpp" />
     <ClCompile Include="digtubePlus.cpp" />
     <ClCompile Include="globalConfig.c" />
+    <ClCompile Include="Potentiometer.cpp" />
   </ItemGroup>
   <PropertyGroup>
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>
