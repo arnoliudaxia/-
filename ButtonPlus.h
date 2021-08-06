@@ -22,6 +22,7 @@ public:
 private:
 	int mypin;
 	bool status;
+	int pressTimes;
 };
 
 

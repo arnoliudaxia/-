@@ -35,6 +35,15 @@ Digtube::~Digtube()
 {
 }
 
+void Digtube::TestDigtube()
+{
+	for (int num = 0;num < 10;num++)
+{
+	digShowNumber(num);
+	delay(400);
+}
+}
+
 void Digtube::digShowNumber(int numbertoshow)
 {
 	for (int i = 0;i < sizeof(mypins) / sizeof(mypins[0]);i++)

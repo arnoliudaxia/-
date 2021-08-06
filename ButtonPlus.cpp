@@ -3,6 +3,8 @@
 // 
 
 #include "ButtonPlus.h"
+#include <SCoop.h> 
+
 Button::Button(int pin, buttonMode bm)
 {
 	switch (bm)
@@ -34,7 +36,7 @@ bool Button::isChanged()
 	if (this->isOn() == status)return false;
 	else
 	{
-		delay(100);
+		delayMicroseconds(1);
 		if (this->isOn() == status)return false;
 		else
 		{

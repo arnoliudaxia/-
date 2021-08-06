@@ -15,6 +15,7 @@ public:
 	//Digtube();
 	Digtube(int pins[]);
 	~Digtube();
+	void TestDigtube();
 	void digShowNumber(int numbertoshow);
 private:
 	int mypins[7];
