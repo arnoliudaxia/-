@@ -1,5 +1,8 @@
 // GamepadPSP.h
+/*提示
+* 这个库不支持热插拔，不要在Arduino开启的时候插拔控制器，否则必须再次config_gamepad(pins)重连
 
+*/
 #ifndef _GAMEPADPSP_h
 #define _GAMEPADPSP_h
 
