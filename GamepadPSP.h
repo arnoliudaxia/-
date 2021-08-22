@@ -14,6 +14,7 @@ class GamepadPSP
 public:
 	GamepadPSP();
 	~GamepadPSP();
+	void CheckInput();
 
 private:
 

@@ -46,6 +46,9 @@
     <ClInclude Include="ADXL345.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GamepadPSP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="digtubePlus.cpp">
@@ -70,6 +73,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ADXL345.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GamepadPSP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
