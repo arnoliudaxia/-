@@ -4,6 +4,8 @@
 
 #include "globalConfig.h"
 #include <Arduino.h>
+#include "globalConfig.h"
+
 #pragma region 模拟引脚定义区域
 /*
 const int analogpinA6 = PIN_A6;
@@ -31,10 +33,10 @@ const int pin_digtube_p = 34;
 #pragma endregion
 
 #pragma region 手柄引脚定义
-const int pin_clk = 13;
-const int pin_command = 11;
-const int pin_cs = 10;
-const int pin_data = 12;
+//const int pin_clk = 13;
+//const int pin_command = 11;
+//const int pin_cs = 10;
+//const int pin_data = 12;
 
 #pragma endregion
 

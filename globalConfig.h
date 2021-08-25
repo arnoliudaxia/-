@@ -31,5 +31,16 @@ extern const int analogpinA15;
 //定义宏来选择要播放的歌曲
 //一共有如下的歌 SuperMalio, PIRATE, CrazyFrog, Mariounderworld, Titanic，放哪首定义哪个
 #define SuperMalio
+
+
+//extern const int pin_clk = 13;
+//extern const int pin_command = 11;
+//extern const int pin_cs = 10;
+//extern const int pin_data = 12;
+
+#define pin_clk  13
+#define pin_command  11
+#define pin_cs  10
+#define pin_data  12
 #endif
 

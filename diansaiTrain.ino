@@ -1,5 +1,4 @@
 #include "GamepadPSP.h"
-#include <PS2X_lib.h>  
 
 GamepadPSP gamepad;
 
@@ -11,12 +10,13 @@ byte vibrate = 0;
 void setup() {
 
     Serial.begin(115200);
+    gamepad.initPSP();
 }
 
 void loop()
 {
     gamepad.CheckInput();
-
+    ///Serial.print("HEEE");
     delay(50);
 
 }
