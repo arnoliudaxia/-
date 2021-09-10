@@ -19,9 +19,10 @@ public:
 	~GamepadPSP();
 	void initPSP();
 	void CheckInput();
+	int giveSpeed();
 
 private:
-
+	int rvalue=0;
 };
 
 

@@ -40,7 +40,7 @@ extern const int analogpinA15;
 
 #define pin_clk  13
 #define pin_command  11
-#define pin_cs  10
-#define pin_data  12
+#define pin_cs  8
+#define pin_data  9
 #endif
 

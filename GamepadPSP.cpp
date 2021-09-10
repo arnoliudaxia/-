@@ -109,8 +109,11 @@ void GamepadPSP::CheckInput()
     //ButtonReleased
 
     if (ps2x.ButtonPressed(PSB_RED))             //被按
+    {
         Serial.println("CIRECLE");
-
+        this->rvalue = ps2x.Analog(PSS_LY);
+        Serial.println("Set Home value as:"+ this->rvalue);
+    }
     if (ps2x.ButtonReleased(PSB_PINK))             //被松开
         Serial.println("SQUARE");
     if (ps2x.Button(PSB_GREEN))
@@ -118,14 +121,27 @@ void GamepadPSP::CheckInput()
     if (ps2x.NewButtonState(PSB_BLUE))            //被按和被松开
         Serial.println("X");
 
-    Serial.print(ps2x.Analog(PSS_LY), DEC);
-    Serial.print(",");
-    Serial.print(ps2x.Analog(PSS_LX), DEC);
-    Serial.print(",");
-    Serial.print(ps2x.Analog(PSS_RY), DEC);
-    Serial.print(",");
-    Serial.println(ps2x.Analog(PSS_RX), DEC);
 
 
+
+        //Serial.print(ps2x.Analog(PSS_LY), DEC);
+        //Serial.print(",");
+        //Serial.print(ps2x.Analog(PSS_LX), DEC);
+        //Serial.print(",");
+        //Serial.print(ps2x.Analog(PSS_RY), DEC);
+        //Serial.print(",");
+        //Serial.println(ps2x.Analog(PSS_RX), DEC);
+    
+
+}
+
+int GamepadPSP::giveSpeed()
+{
+    if (this->rvalue != 0)
+    {
+        Serial.print(ps2x.Analog(PSS_LY) - this->rvalue);
+        return         (ps2x.Analog(PSS_LY) - this->rvalue);
+    }
+    return 0;
 }
 
