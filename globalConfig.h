@@ -37,10 +37,13 @@ extern const int analogpinA15;
 //extern const int pin_command = 11;
 //extern const int pin_cs = 10;
 //extern const int pin_data = 12;
+#pragma region Ò£¿ØÆ÷ÅäÖÃÇø
+#define pin_clk  7
+#define pin_command  5
+#define pin_cs  6
+#define pin_data  4
+#pragma endregion
 
-#define pin_clk  13
-#define pin_command  11
-#define pin_cs  8
-#define pin_data  9
+
 #endif
 

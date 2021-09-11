@@ -26,6 +26,15 @@ void Motor::Stop()
 void Motor::changeSpeed(int speed)
 {
 	this->speed = speed;
+	if (speed > 0)
+	{
+		digitalWrite(MotorPin[this->MotorNumber - 1][1], HIGH);
+	}
+	else
+	{
+		digitalWrite(MotorPin[this->MotorNumber - 1][1], LOW);
+		speed = -speed;
+	}
 	setMotorSpeed(MotorPin[this->MotorNumber-1][0], speed);
 
 }

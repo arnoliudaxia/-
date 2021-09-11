@@ -90,7 +90,7 @@ void GamepadPSP::CheckInput()
 
 
 
-    if (ps2x.NewButtonState()||true)     
+    if (ps2x.NewButtonState())     
     {
         if (ps2x.Button(PSB_L3))
             Serial.println("L3");
@@ -111,10 +111,9 @@ void GamepadPSP::CheckInput()
     if (ps2x.ButtonPressed(PSB_RED))             //被按
     {
         Serial.println("CIRECLE");
-        this->rvalue = ps2x.Analog(PSS_LY);
-        Serial.println("Set Home value as:"+ this->rvalue);
+
     }
-    if (ps2x.ButtonReleased(PSB_PINK))             //被松开
+    if (ps2x.NewButtonState(PSB_PINK))             //被松开
         Serial.println("SQUARE");
     if (ps2x.Button(PSB_GREEN))
         Serial.println("TRIANGLE");
@@ -124,13 +123,13 @@ void GamepadPSP::CheckInput()
 
 
 
-        //Serial.print(ps2x.Analog(PSS_LY), DEC);
-        //Serial.print(",");
-        //Serial.print(ps2x.Analog(PSS_LX), DEC);
-        //Serial.print(",");
-        //Serial.print(ps2x.Analog(PSS_RY), DEC);
-        //Serial.print(",");
-        //Serial.println(ps2x.Analog(PSS_RX), DEC);
+        Serial.print(ps2x.Analog(PSS_LY), DEC);
+        Serial.print(",");
+        Serial.print(ps2x.Analog(PSS_LX), DEC);
+        Serial.print(",");
+        Serial.print(ps2x.Analog(PSS_RY), DEC);
+        Serial.print(",");
+        Serial.println(ps2x.Analog(PSS_RX), DEC);
     
 
 }
@@ -143,5 +142,13 @@ int GamepadPSP::giveSpeed()
         return         (ps2x.Analog(PSS_LY) - this->rvalue);
     }
     return 0;
+}
+
+int GamepadPSP::enableflyMotor()
+{
+    ps2x.read_gamepad();
+    int value = 128 - (int)(ps2x.Analog(PSS_LX));
+    int speed = value * 1.0 / 128 * 100;
+    return speed;
 }
 

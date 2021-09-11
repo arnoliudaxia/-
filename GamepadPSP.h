@@ -21,6 +21,7 @@ public:
 	void CheckInput();
 	int giveSpeed();
 
+	int enableflyMotor();
 private:
 	int rvalue=0;
 };
