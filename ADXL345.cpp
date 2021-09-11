@@ -33,16 +33,20 @@ void readFrom(int device, byte address, int num, byte buff[]) {
 
 Acceleration::Acceleration()
 {
-	Wire.begin(); 
+
+}
+
+Acceleration::~Acceleration()
+{
+}
+void Acceleration::init()
+{
+	Wire.begin();
 
 	//Turning on the ADXL345
 	writeTo(DEVICE, 0x2D, 0);
 	writeTo(DEVICE, 0x2D, 16);
 	writeTo(DEVICE, 0x2D, 8);
-}
-
-Acceleration::~Acceleration()
-{
 }
 void Acceleration::readAcc()
 {

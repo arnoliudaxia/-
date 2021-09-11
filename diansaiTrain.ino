@@ -9,23 +9,24 @@ Acceleration acc;
 void setup() {
 
     Serial.begin(115200);
-   
+    acc.init();
 }
 
 void loop()
 {
-    Serial.print("Start working\n");
-    //acc.readAcc();
-    //Serial.print(acc.x);
-    //Serial.print(",");
-    //Serial.print(acc.y);
-    //Serial.print(",");
-    //Serial.print(acc.z);
-    //Serial.print(",");
-    //Serial.print(acc.pitch);
-    //Serial.print(",");
-    //Serial.print(acc.roll);
-    //Serial.print("\n");
+    
+   // Serial.print("Start working\n");
+    acc.readAcc();
+    Serial.print(acc.x);
+    Serial.print(",");
+    Serial.print(acc.y);
+    Serial.print(",");
+    Serial.print(acc.z);
+    Serial.print(",");
+    Serial.print(acc.pitch);
+    Serial.print(",");
+    Serial.print(acc.roll);
+    Serial.print("\n");
     delay(100);
 
 }
