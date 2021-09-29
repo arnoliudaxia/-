@@ -178,3 +178,11 @@ int *GamepadPSP::niceControl()
 
 }
 
+int GamepadPSP::chassisControl()
+{
+    ps2x.read_gamepad();
+
+    int wantPower = (int)(ps2x.Analog(PSS_LY));
+    return wantPower;
+}
+

@@ -24,6 +24,8 @@ public:
 	int enableflyMotor();
 	int *niceControl();
 
+	int chassisControl();
+
 	int powerUnion[2];
 private:
 	int rvalue=0;
