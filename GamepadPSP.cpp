@@ -152,3 +152,29 @@ int GamepadPSP::enableflyMotor()
     return speed;
 }
 
+int *GamepadPSP::niceControl()
+{
+    
+    ps2x.read_gamepad();
+    int xvalue = 128 - (int)(ps2x.Analog(PSS_LX));
+    if (abs(xvalue) > 100)
+    {
+        //600 1675 135бу
+        this->powerUnion[0] = 600;
+        this->powerUnion[1] = 1675;
+    }
+    else if(abs(xvalue)>50)
+    {
+        //300 1225 30бу
+
+    }
+    else
+    {
+        //ik]i-]i200 1100 15бу
+
+    }
+
+    Serial3.println(xvalue);//left most is 128 and right most is -127
+
+}
+

@@ -22,6 +22,9 @@ public:
 	int giveSpeed();
 
 	int enableflyMotor();
+	int *niceControl();
+
+	int powerUnion[2];
 private:
 	int rvalue=0;
 };
