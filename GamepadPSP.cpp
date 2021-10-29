@@ -174,15 +174,29 @@ int *GamepadPSP::niceControl()
 
     }
 
-    Serial3.println(xvalue);//left most is 128 and right most is -127
+    //Serial3.println(xvalue);//left most is 128 and right most is -127
 
 }
-
+int signal(int input)
+{
+    return input >= 0 ? 1 : -1;
+}
 int GamepadPSP::chassisControl()
 {
     ps2x.read_gamepad();
 
-    int wantPower = (int)(ps2x.Analog(PSS_LY));
+    int wantPower = 127-(int)(ps2x.Analog(PSS_LY));
+    int transerpower=  (log(abs(wantPower) + 1) / log(1.049467757));
+    if (wantPower < 0)return -transerpower;
+    else return transerpower;
+    //return wantPower;
+}
+
+int GamepadPSP::turnControl()
+{
+    ps2x.read_gamepad();
+    int wantPower = 128 - (int)(ps2x.Analog(PSS_LX));
+
     return wantPower;
 }
 

@@ -25,6 +25,7 @@ public:
 	int *niceControl();
 
 	int chassisControl();
+	int turnControl();
 
 	int powerUnion[2];
 private:

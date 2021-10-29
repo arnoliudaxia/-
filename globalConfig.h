@@ -42,6 +42,13 @@ extern const int analogpinA15;
 #define pin_command  5
 #define pin_cs  6
 #define pin_data  4
+#pragma endregionnb
+
+#pragma region 电机驱动扩展板配置区
+#define E1 10
+#define M1 12
+#define E2 11
+#define M2 13
 #pragma endregion
 
 
