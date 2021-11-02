@@ -48,7 +48,7 @@ void Acceleration::init()
 	writeTo(DEVICE, 0x2D, 16);
 	writeTo(DEVICE, 0x2D, 8);
 }
-void Acceleration::readAcc()
+Acceleration* Acceleration::readAcc()
 {
 	readFrom(DEVICE, regAddress, TO_READ, buff); //read the acceleration data from the ADXL345
 											 //each axis reading comes in 10 bit resolution, ie 2 bytes.  Least Significat Byte first!!
@@ -65,4 +65,5 @@ void Acceleration::readAcc()
 	roll = atan2(y_Buff, z_Buff) * 57.3;
 	pitch = atan2((-x_Buff), sqrt(y_Buff * y_Buff + z_Buff * z_Buff)) * 57.3;
 #pragma endregion
+	return this;
 }

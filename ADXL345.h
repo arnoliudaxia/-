@@ -18,7 +18,7 @@ public:
 	Acceleration();
 	~Acceleration();
 	void init();
-	void readAcc();
+	Acceleration* readAcc();
 	int x, y, z;                        //three axis acceleration data
 	double roll = 0.00, pitch = 0.00;       //Roll & Pitch are the angles which rotate by the axis X and y
 

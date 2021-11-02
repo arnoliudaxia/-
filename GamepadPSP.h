@@ -8,6 +8,7 @@
 
 #if defined(ARDUINO) && ARDUINO >= 100
 	#include "arduino.h"
+#include "ADXL345.h"
 #else
 	#include "WProgram.h"
 #endif
@@ -21,11 +22,11 @@ public:
 	void CheckInput();
 	int giveSpeed();
 
-	int enableflyMotor();
 	int *niceControl();
 
 	int chassisControl();
 	int turnControl();
+	int aniContrl(Acceleration* acc);
 
 	int powerUnion[2];
 private:
