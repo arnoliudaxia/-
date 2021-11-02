@@ -144,13 +144,6 @@ int GamepadPSP::giveSpeed()
     return 0;
 }
 
-int GamepadPSP::enableflyMotor()
-{
-    ps2x.read_gamepad();
-    int value = 128 - (int)(ps2x.Analog(PSS_LX));
-    int speed = value * 1.0 / 128 * 100;
-    return speed;
-}
 
 int *GamepadPSP::niceControl()
 {
@@ -174,7 +167,51 @@ int *GamepadPSP::niceControl()
 
     }
 
-    Serial3.println(xvalue);//left most is 128 and right most is -127
+    //Serial3.println(xvalue);//left most is 128 and right most is -127
+
+}
+int signal(int input)
+{
+    return input >= 0 ? 1 : -1;
+}
+int GamepadPSP::chassisControl()
+{
+    ps2x.read_gamepad();
+
+    int wantPower = 127-(int)(ps2x.Analog(PSS_LY));
+     wantPower =  signal(wantPower)*(log(abs(wantPower) + 1) / log(1.049467757));
+  
+    return wantPower;
+}
+
+int GamepadPSP::turnControl()
+{
+    ps2x.read_gamepad();
+    int wantPower = 128 - (int)(ps2x.Analog(PSS_LX));
+
+    return wantPower;
+}
+
+int GamepadPSP::aniContrl(Acceleration* acc)
+{
+    static int horizonPitch = 0;
+    static bool aniEnabled = false;
+    ps2x.read_gamepad();
+    if (ps2x.ButtonPressed(PSB_SQUARE))
+    {
+        horizonPitch = acc->readAcc()->pitch;
+        aniEnabled = true;
+        Serial3.print("Set ref pos: ");
+        Serial3.println(horizonPitch);
+    }
+    if (ps2x.ButtonPressed(PSB_CIRCLE))
+    {
+        aniEnabled = false;
+        Serial3.println("Stop PID");
+
+    }
+    return aniEnabled * horizonPitch;
+
 
 }
 
